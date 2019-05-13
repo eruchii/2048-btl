@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>  
-#include <conio.h>
 #include <time.h>
 
 using namespace std;

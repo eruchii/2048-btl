@@ -13,10 +13,10 @@ OBJS = 	main.cpp \
 CC = g++
 
 #INCLUDE_PATHS specifies the additional include paths we'll need
-INCLUDE_PATHS = -IF:\MinGW\include\SDL2 -I.
+INCLUDE_PATHS = -IF:\MinGW\include\SDL2
 
 #LIBRARY_PATHS specifies the additional library paths we'll need
-LIBRARY_PATHS = -LF:\MinGW\lib -L.
+LIBRARY_PATHS = -LF:\MinGW\lib
 
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
@@ -27,7 +27,7 @@ COMPILER_FLAGS = -w -Wl,-subsystem,windows
 LINKER_FLAGS = -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 
 #OBJ_NAME specifies the name of our exectuable
-OBJ_NAME = 2048
+OBJ_NAME = ../bin/2048
 
 #This is the target that compiles our executable
 all : $(OBJS)

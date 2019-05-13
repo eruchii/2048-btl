@@ -67,20 +67,3 @@ void CloseSDL(){
 const SDL_Color BLACK = { 0, 0, 0, 0 };
 const SDL_Color WHITE = { 255, 255, 255, 255 };
 
-SDL_Color Color_Mix(const SDL_Color &color1, const SDL_Color &color2, double weight)
-{
-	double p = weight;
-	double w = p * 2 - 1;
-	double a = color1.a / 255.0 - color2.a / 255.0;
-
-	double w1 = ((w * a == -1 ? w : (w + a) / (1 + w * a)) + 1) / 2.0;
-	double w2 = 1 - w1;
-
-	SDL_Color result;
-	result.r = static_cast<Uint8>(color1.r * w1 + color2.r * w2);
-	result.g = static_cast<Uint8>(color1.g * w1 + color2.g * w2);
-	result.b = static_cast<Uint8>(color1.b * w1 + color2.b * w2);
-	result.a = static_cast<Uint8>(color1.a * w1 + color2.a * w2);
-
-	return result;
-}

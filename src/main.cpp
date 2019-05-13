@@ -122,5 +122,11 @@ int main(int argv, char** args){
 		}
 		SDL_Delay(10);
 	}
+
+	SDL_GameControllerClose( gGameController );
+	SDL_HapticClose(gControllerHaptic);
+	gGameController = NULL;
+	gControllerHaptic = NULL;
+
 	CloseSDL();
 }

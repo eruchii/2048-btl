@@ -15,7 +15,5 @@ extern void CloseSDL();
 extern const SDL_Color BLACK;
 extern const SDL_Color WHITE;
 
-extern SDL_Color Color_Mix(const SDL_Color &color1, const SDL_Color &color2, double weight);
-
 
 #endif

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>  
-#include <conio.h>
 #include <time.h>
 #include "Grid.h"
 #include <cstring>
@@ -92,11 +91,13 @@ void Grid::gridMove(Dir dir){
     if(g_gameover){
         return;
     }
-    vector< vector<int> > v;
+    vector< vector<int> > v, vb;
     v.assign(gsize, vector<int>());
+    vb.assign(gsize, vector<int>());
     for(int i = 0 ; i < gsize ; i++){
         for(int j = 0 ; j < gsize ; j++){
             if(dir % 2 != 0) v[i].push_back(grid[i][j]); else v[i].push_back(grid[j][i]);
+            if(dir % 2 != 0) vb[i].push_back(grid[i][j]); else vb[i].push_back(grid[j][i]);
         }
         if(dir >= 2) reverse(v[i].begin(), v[i].end());
         removeZero(v[i]);
@@ -108,7 +109,10 @@ void Grid::gridMove(Dir dir){
         }
     }
     if(moveAvailable()){
-        addRandom();
+        int moved = 0;
+        for(int i = 0 ; i < 4 ; i++)
+            for(int j = 0; j < 4 ; j++) if(v[i][j] != vb[i][j]) moved = 1;
+        if(moved)  addRandom();
     }
     else g_gameover = true;
 }
