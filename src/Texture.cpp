@@ -1,6 +1,6 @@
 #include "Texture.h"
-#include <SDL_image.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include "Window.h"
 #include "Render.h"
 #include "Font.h"

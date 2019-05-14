@@ -1,8 +1,8 @@
 #ifndef Font_h
 #define Font_h
 
-#include <SDL.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
 
 class Font{
 	public:
